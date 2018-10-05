@@ -1,0 +1,58 @@
+/*
+ * File: HelloKarel.c
+ * --------------------------------
+ * The HelloKarel program is a simple
+ * program to demonstrate a minimal working
+ * Karel example.
+ * 
+ */
+
+#include "karel.h"
+/*
+ * Truns Karel 90 degress to the Right
+ */
+void turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+}
+
+void setup() {
+    loadWorld("LivingRoom");
+
+
+
+}
+/*
+ * Karel moves 5 times
+ */
+
+
+void move5(){
+    move();
+    move();
+    move();
+    move();
+    move();
+
+
+}
+void run() {
+    move5();
+    turnLeft();
+    move();
+    move();
+    move();
+    turnRight();
+    move();
+    move();
+    pickBeeper();
+    move();
+    move();
+
+
+
+
+
+}
+

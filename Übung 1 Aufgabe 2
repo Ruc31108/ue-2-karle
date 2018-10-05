@@ -1,0 +1,66 @@
+/*
+ * File: HelloKarel.c
+ * --------------------------------
+ * The HelloKarel program is a simple
+ * program to demonstrate a minimal working
+ * Karel example.
+ * 
+ */
+
+#include "karel.h"
+/*
+ * Truns Karel 90 degress to the Right
+ */
+void turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+}
+
+void setup() {
+    loadWorld("damagedPillar1");
+}
+
+void BigStep(){
+    move();
+    move();
+    move();
+    move();
+}
+
+void Build(){
+    if (noBeepersPresent()){
+        putBeeper();
+    } else BigStep();{
+        if (frontIsBlocked()){
+            while (facingEast()){
+                turnLeft();
+                move();
+                turnLeft();
+            }
+            if (frontIsBlocked()){
+                while (facingWest()){
+                    if (noBeepersPresent()){
+                        putBeeper();
+                    } else {
+                        turnRight();
+                        move();
+                        turnRight();
+                    }
+
+                }
+            }
+
+        }
+    }
+
+
+}
+
+void run() {
+    for (int i = 0; i < 23; ++i) {
+        Build();
+    }
+BigStep();
+    }
+
