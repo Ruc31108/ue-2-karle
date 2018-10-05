@@ -37,6 +37,7 @@ void checkForBeep() {
 
 void build(){
     // Test fuer push
+    // sdfasfsdfasfsd
     checkForBeep();
     if(!frontIsBlocked()) {
         bigStep();
